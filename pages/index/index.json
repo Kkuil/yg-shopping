@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "Search": "../../components/Search/Search",
+    "Swiper": "components/Swiper/Swiper",
+    "Category": "components/Items/Items",
+    "Floor": "components/Floor/Floor"
+  },
+  "navigationBarTitleText": "首页"
+}

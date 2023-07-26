@@ -1,0 +1,105 @@
+.feedback {
+    width: 100vw;
+    height: 100vh;
+    background-color: #eeeeee;
+    .tab {
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        .active {
+            border-bottom: 5rpx solid var(--themeColor);
+        }
+        .item {
+            flex: 1;
+            height: 80rpx;
+            font-size: 35rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .problems {
+        font-size: 30rpx;
+        padding: 20rpx;
+        .title {
+            color: #777;
+        }
+        .little-problems {
+            padding: 25rpx;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            .problem {
+                width: 200rpx;
+                height: 60rpx;
+                margin: 10rpx;
+                background-color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .descriptions {
+            width: 100%;
+            height: 450rpx;
+            background-color: #fff;
+            padding: 20rpx;
+            margin-bottom: 5rpx;
+            #descriptions {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .uploadImage {
+        background-color: #fff;
+        display: flex;
+        justify-content: flex-start;
+        height: 120rpx;
+        margin: 0 20rpx;
+        padding: 10rpx;
+        .btn {
+            display: inline-block;
+            width: 100rpx;
+            height: 100rpx;
+            border-radius: 15rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+            color: #ccc;
+        }
+        .images {
+            .img {
+                overflow: visible;
+                position: relative;
+                width: 100rpx;
+                height: 100rpx;
+                margin-left: 15rpx;
+                ::after {
+                    position: absolute;
+                    top: -15rpx;
+                    right: -15rpx;
+                    content: 'x';
+                    display: block;
+                    width: 35rpx;
+                    height: 35rpx;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    background-color: red;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    #submit {
+        float: right;
+        margin: 20rpx;
+        width: 250rpx;
+        background-color: var(--themeColor);
+        color: #fff;
+    }
+}

@@ -1,0 +1,13 @@
+<view class="left_menu">
+    <scroll-view class="scroll_menu" scroll-y>
+        <view
+        wx:for="{{Menus}}"
+        wx:key="item"
+        class="item {{currentIndex == index ? 'active' : ''}}"
+        bindtap="exchangeItems"
+        data-index="{{index}}"
+        >
+        {{item}}
+        </view>
+    </scroll-view>
+</view>

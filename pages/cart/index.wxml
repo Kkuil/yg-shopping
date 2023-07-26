@@ -1,0 +1,84 @@
+<view class="cart">
+    <!-- 添加收货地址 -->
+    <view class="add_address">
+        <button wx:if="{{!address.userName}}" bindtap="choose_address" class="add_btn">+ 添加收货地址</button>
+        <!-- 收货地址详情 -->
+        <view wx:if="{{address.userName}}" class="user_address">
+            <view>收货人：{{address.userName}}</view>
+            <view>收货地址：
+            {{address.provinceName + address.cityName + address.countyName + address.detailInfo}}
+            </view>
+            <view>收货人联系电话：{{address.telNumber}}</view>
+        </view>
+    </view>
+    <!-- 标题 -->
+    <text class="cart_title">优购生活馆</text>
+    <!-- 购物车商品 -->
+    <view class="cart_goods">
+        <view
+        bindlongtap="deleteGoods"
+        data-goods_id="{{item.goods_id}}"
+        wx:for="{{goods}}"
+        wx:key="goods_id"
+        class="goods"
+        >   
+            <checkbox 
+            bindtap="handleIsChecked"
+            data-goods_id="{{item.goods_id}}"
+            class="selected_goods" 
+            checked="{{item.isChecked}}"
+            value="{{item.goods_id}}"
+            color="#ff4352"
+            />
+            <view class="img">
+                <image mode="widthFix" src="{{item.goods_big_logo}}"/>
+            </view>
+            <view class="intro_price_num">
+                <navigator class="introduction">{{item.goods_name}}</navigator>
+                <view class="price">￥ {{item.goods_price}}</view>
+                <view class="number" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+                    <view 
+                    bindtap="decrement"
+                    data-goods_id="{{item.goods_id}}"
+                    >
+                    -
+                    </view>
+                    <text> {{item.goods_num}} </text>
+                    <view
+                    bindtap="increment"
+                    data-goods_id="{{item.goods_id}}"
+                    >
+                    +
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 空空如也 -->
+    <view wx:if="{{isEmpty}}" class="empty">
+        <text>你还没有购物车商品哦，快去逛逛吧！</text>
+    </view>
+    <view class="parkSymbol"></view>
+    <!-- 支付工具栏 -->
+    <view class="pay_tools">
+        <!-- 全选 -->
+        <view class="cart_all_checked">
+            <checkbox bindtap="all_checked" checked="{{isAllChecked}}" class="all_checked" color="#ff4352">全选</checkbox>
+        </view>
+        <!-- 合计 -->
+        <view class="pay_sum">
+            <text class="sum">
+                <text>合计：</text>
+                <text class="price">￥ {{sum_price}}</text>
+            </text>
+            <text class="words">含运费</text>
+        </view>
+        <!-- 结算按钮 -->
+        <navigator 
+        bindtap="paying"
+        class="paying"
+        >
+        结算({{checked_goods.length}})
+        </navigator>
+    </view>
+</view>

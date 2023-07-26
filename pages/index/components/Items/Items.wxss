@@ -1,0 +1,11 @@
+.category {
+  display: flex;
+  justify-content: space-around;
+}
+.category .item {
+  flex: 1;
+  padding: 20rpx;
+}
+.category .item .navigator .img {
+  width: 100%;
+}

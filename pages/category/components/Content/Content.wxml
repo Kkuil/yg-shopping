@@ -1,0 +1,35 @@
+<view class="right_content">
+    <scroll-view scroll-top="{{scrollTop}}" class="scroll_content" scroll-y>
+        <view 
+        wx:for="{{Contents}}"
+        wx:for-item="item1"
+        wx:for-index1="index1"
+        wx:key="cat_id"
+        class="goods_container"
+        >
+            <!-- 标题 -->
+            <view class="header">
+                <text class="delimeter">/</text>
+                <text class="title">{{item1.cat_name}}</text>
+                <text class="delimeter">/</text>
+            </view>
+            <!-- 列表 -->
+            <view 
+            class="goods_items"
+            >
+                <navigator 
+                wx:for="{{item1.children}}"
+                wx:for-item="item2"
+                wx:for-index1="index2"
+                wx:key="cat_id"
+                class="goods_item"
+                url='/pages/goods_list/index?query={{item2.cat_name}}&cid={{item2.cat_id}}'
+                >
+                    <!-- 图片 -->
+                    <image mode="widthFix" src="{{item2.cat_icon}}"/>
+                    <text class="words">{{item2.cat_name}}</text>
+                </navigator>
+            </view>
+        </view>
+    </scroll-view>
+</view>

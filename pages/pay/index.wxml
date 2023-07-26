@@ -1,0 +1,52 @@
+<view class="paying">
+    <!-- 收货地址详情 -->
+    <view class="user_address">
+        <view>收货人：{{address.userName}}</view>
+        <view>收货地址：
+        {{address.provinceName + address.cityName + address.countyName + address.detailInfo}}
+        </view>
+        <view>收货人联系电话：{{address.telNumber}}</view>
+    </view>
+    <!-- 购物车标题 -->
+    <view class="title">
+        <text>购物车</text>
+    </view>
+    <!-- 购物车商品 -->
+    <view class="cart_goods">
+        <view
+        wx:for="{{needPayGoods}}"
+        wx:key="goods_id"
+        class="goods"
+        >   
+            <view class="img">
+                <image mode="widthFix" src="{{item.goods_big_logo}}"/>
+            </view>
+            <view class="intro_price_num">
+                <navigator class="introduction">{{item.goods_name}}</navigator>
+                <view class="price">￥ {{item.goods_price}}</view>
+                <view class="number">
+                    <text>x{{item.goods_num}} </text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 支付工具栏 -->
+    <view class="pay_tools">
+        <!-- 合计 -->
+        <view class="pay_sum">
+            <text class="sum">
+                <text>合计：</text>
+                <text class="price">￥ {{sum_price}}</text>
+            </text>
+            <text class="words">含运费</text>
+        </view>
+        <!-- 结算按钮 -->
+        <navigator 
+        bindtap="paying"
+        class="paying"
+        url="/pages/auth/index"
+        >
+        支付({{sum_num}})
+        </navigator>
+    </view>
+</view>

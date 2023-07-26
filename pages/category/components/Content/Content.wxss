@@ -1,0 +1,32 @@
+.right_content .scroll_content {
+  width: 570rpx;
+  height: 100vh;
+}
+.right_content .scroll_content .header {
+  padding: 50rpx 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right_content .scroll_content .header .delimeter {
+  margin: 0px 30rpx;
+  color: #777;
+}
+.right_content .scroll_content .header .title {
+  font-size: 30rpx;
+}
+.right_content .scroll_content .goods_items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right_content .scroll_content .goods_items .goods_item {
+  width: 33.33%;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.right_content .scroll_content .goods_items .goods_item .words {
+  font-size: 30rpx;
+}

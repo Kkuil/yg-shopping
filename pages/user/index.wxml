@@ -1,0 +1,79 @@
+<view class="user">
+    <!-- 头像 -->
+    <view class="bg_avatar"></view>
+    <view class="small_avatar">
+        <image class="avatar" mode="widthFix" src="https://i.postimg.cc/GtpppmHB/20221030152348.jpg"/>
+        <text class="user_name">一妍为定</text>
+    </view>
+    <!-- 我的商品栏 -->
+    <view class="goods_tool">
+        <navigator class="item" url="/pages/collect/index?currentIndex=0">
+            <view class="item_num">{{collections}}</view>
+            <view class="item_name">商品收藏</view>
+        </navigator>
+        <navigator class="item" url="/pages/collect/index?currentIndex=1">
+            <view class="item_num">0</view>
+            <view class="item_name">品牌收藏</view>
+        </navigator>
+        <navigator class="item" url="/pages/collect/index?currentIndex=2">
+            <view class="item_num">0</view>
+            <view class="item_name">店铺收藏</view>
+        </navigator>
+        <navigator class="item" url="/pages/collect/index?currentIndex=3">
+            <view class="item_num">{{history}}</view>
+            <view class="item_name">我的足迹</view>
+        </navigator>
+    </view>
+    <!-- 我的订单 -->
+    <view class="my-paying">
+        <view class="title">我的订单</view>
+        <view class="items">
+            <navigator class="item" url="/pages/order/index?currentIndex=0" hover-class="noshadow">
+                <text class="iconfont icon-dingdan"></text>
+                <text>全部订单</text>
+            </navigator>
+            <navigator class="item" url="/pages/order/index?currentIndex=1" hover-class="noshadow">
+                <text class="iconfont icon-icondaifukuan"></text>
+                <text>待付款</text>
+            </navigator>
+            <navigator class="item" url="/pages/order/index?currentIndex=2" hover-class="noshadow">
+                <text class="iconfont icon-daishouhuo"></text>
+                <text>待收货</text>
+            </navigator>
+            <navigator class="item" url="/pages/order/index?currentIndex=3" hover-class="noshadow">
+                <text class="iconfont icon-tuihuotuikuan_dianpu"></text>
+                <text>退货/退款</text>
+            </navigator>
+        </view>
+    </view>
+    <!-- 收货地址管理 -->
+    <view class="row manage-address">
+        <text class="words">收货地址管理</text>
+        <text class="right">></text>
+    </view>
+    <!-- 反馈 -->
+    <view class="feedback">
+        <!-- 联系客服 -->
+        <view class="row1 contact-client">
+            <text class="words">联系客服</text>
+            <text class="right">155-7986-8330</text>
+        </view>
+        <!-- 意见反馈 -->
+        <navigator class="row1 suggestion-tools" url="/pages/feedback/index">
+            <text class="words">意见反馈</text>
+            <text class="right">></text>
+        </navigator>
+        <!-- 关于我们 -->
+        <view class="row1 about">
+            <text class="words">关于我们</text>
+            <text class="right">></text>
+        </view>
+    </view>
+    <!-- 推荐 -->
+    <view class="row recommend" bindtap="recommend">
+        <text class="words">把应用推荐给朋友</text>
+        <text class="right">></text>
+    </view>
+    <!-- 占位 -->
+    <view class="park"></view>
+</view>

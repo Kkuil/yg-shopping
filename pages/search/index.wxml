@@ -1,0 +1,31 @@
+<view class="search">
+    <!-- 搜索框 -->
+    <view class="searchInput">
+        <input 	placeholder-class="placeInput" bindconfirm="getKeywords" class="searchInput" type="text" placeholder="请输入"/>
+        <view bindtap="handleCancel" class="cancel">取消</view>
+    </view>
+    <view wx:if="{{!isSearch}}" class="history">
+        <view class="title">搜索历史</view>
+        <view class="historys">
+            <view wx:if="{{empty}}" class="empty">{{empty}}</view>
+            <view
+            wx:if="{{!empty}}"
+            wx:for="{{search_history}}"
+            wx:key="index"
+            class="h"
+            >
+            {{item}}
+            </view>
+        </view>
+    </view>
+    <!-- goods_description -->
+    <view class="result">
+        <view
+        wx:for="{{goods_keywords}}"
+        wx:key="goods_id"
+        class="goods_description"
+        >
+        {{item.goods_name}}
+        </view>
+    </view>
+</view>

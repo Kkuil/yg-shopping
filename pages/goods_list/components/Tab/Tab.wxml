@@ -1,0 +1,47 @@
+<view class="goods_list">
+    <!-- tab -->
+    <view class="tabs">
+        <view 
+        class="sub_tab comprehension {{currentIndex == 0 ? 'active' : ''}}"
+        data-index="0"
+        bindtap="change"
+        >
+        综合
+        </view>
+        <view 
+        class="sub_tab sale {{currentIndex == 1 ? 'active' : ''}}" 
+        data-index="1"
+        bindtap="change"
+        >
+        销量
+        </view>
+        <view 
+        class="sub_tab price {{currentIndex == 2 ? 'active' : ''}}" 
+        data-index="2"
+        bindtap="change"
+        >
+        价格
+        </view>
+    </view>
+    <!-- items -->
+    <view class="goodes">
+        <navigator 
+        wx:for="{{goods}}"
+        wx:key="goods_id"
+        class="goods"
+        url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+        bindtap="addHistory"
+        data-goods_id="{{item.goods_id}}"
+        >
+            <image mode="widthFix" src="{{item.goods_small_logo ? item.goods_big_logo :  'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fxsj%2F06%2Fzh%2Fpo.jpg%21%2Ffw%2F700%2Fwatermark%2Furl%2FL3hzai93YXRlcl9kZXRhaWwyLnBuZw%2Falign%2Fsoutheast&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669449504&t=43c5657fe67e1eb0559f6709e3cccea4'}}" class="img"/>
+            <view class="detail">
+                <text class="words">{{item.goods_name}}</text>
+                <text class="price">￥ {{item.goods_price}}</text>
+            </view>
+        </navigator>
+    </view>
+    <!-- 底部 / 加载中 / 空空如也 -->
+    <view class="reachBottom" wx:if="{{isReachBottom}}">已经到底了~</view>
+    <view class="loading" wx:if="{{isLoading}}">加载中，请稍后...</view>
+    <view class="empty" wx:if="{{isEmpty}}">空空如也，啥也没有...</view>
+</view>

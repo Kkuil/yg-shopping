@@ -1,0 +1,76 @@
+<view class="goods_detail">
+    <!-- 轮播图 -->
+    <view class="detail_swiper">
+        <swiper 
+        class="swiper" 
+        circular 
+        indicator-dots 
+        autoplay
+        >
+            <swiper-item 
+            wx:for="{{details.pics}}"
+            wx:key="pics_id"
+            bindtap="handlePreviewImage"
+            data-url="{{item.pics_mid}}"
+            >
+                <image class="img" mode="widthFix" src="{{item.pics_mid}}"/>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 商品说明 -->
+    <view class="introduction">
+        <!-- 价格 -->
+        <view class="price">￥ {{details.goods_price}}</view>
+        <view class="detail">
+            <view class="name">{{details.goods_name}}</view>
+            <view class="collection {{isCollected ? 'collected' : ''}}" bindtap="collect">
+                <text class="iconfont icon-icon-test2"></text>
+                <view>{{isCollected ? '已收藏' : '收藏'}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 图文详情 -->
+    <view class="pic_word">
+        <!-- 标题 -->
+        <view class="title">图文详情</view>
+        <!-- 图片（富文本） -->
+        <rich-text nodes="{{details.goods_introduce}}">
+            
+        </rich-text>
+    </view>
+    <!-- 购买工具栏 -->
+    <view class="purchase_menu">
+        <view class="item contact">
+            <text class="iconfont icon-icon-test1"></text>
+            <text>联系客服</text>
+            <button class="btn" open-type="contact"></button>
+        </view>
+        <view class="item share">
+            <text class="iconfont icon-round-share-px"></text>
+            <text>分享</text>
+            <button class="btn" open-type="share"></button>
+        </view>
+        <navigator 
+        class="item cart"
+        open-type="switchTab"
+        url="/pages/cart/index"
+        >
+            <text class="iconfont icon-icon-test"></text>
+            <text>购物车</text>
+        </navigator>
+        <view
+        bindtap="add_cart"
+        class="item addCart"
+        >
+        加入购物车
+        </view>
+        <navigator
+        bindtap="purchase"
+        url='/pages/cart/index'
+        open-type="switchTab"
+        class="item purchasing"
+        >
+        立即购买
+        </navigator>
+    </view>
+</view>

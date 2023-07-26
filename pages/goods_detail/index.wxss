@@ -1,0 +1,111 @@
+.goods_detail .detail_swiper {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+.goods_detail .detail_swiper .swiper {
+  width: 100%;
+  height: 700rpx;
+}
+.goods_detail .detail_swiper .swiper .img {
+  width: 100%;
+}
+.goods_detail .introduction {
+  border-bottom: 10rpx solid #c4c4c4;
+}
+.goods_detail .introduction .price {
+  color: var(--themeColor);
+  font-weight: 600;
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+}
+.goods_detail .introduction .detail {
+  display: flex;
+}
+.goods_detail .introduction .detail .name {
+  flex: 8;
+  font-size: 32rpx;
+  padding: 10rpx;
+  height: 90rpx;
+  border-right: 2px solid #c4c4c4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_detail .introduction .detail .collection {
+  flex: 2;
+  font-size: 32rpx;
+  padding: 5rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.goods_detail .introduction .detail .collection .iconfont {
+  font-size: 55rpx;
+}
+.goods_detail .introduction .detail .collected {
+  color: #ffa500;
+}
+.goods_detail .pic_word .title {
+  line-height: 100rpx;
+  padding-left: 20rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: var(--themeColor);
+}
+.goods_detail .purchase_menu {
+  width: 100vw;
+  position: fixed;
+  bottom: 0px;
+  border-top: 1px solid #ccc;
+}
+.goods_detail .purchase_menu .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  height: 90rpx;
+  font-size: 23rpx;
+  background-color: #fff;
+}
+.goods_detail .purchase_menu .item .btn {
+  position: absolute;
+  top: 0;
+  width: 16%;
+  height: 100%;
+  opacity: 0;
+}
+.goods_detail .purchase_menu .contact {
+  width: 16%;
+  display: flex;
+  left: 0;
+  flex-direction: column;
+}
+.goods_detail .purchase_menu .share {
+  width: 16%;
+  display: flex;
+  left: 16%;
+  flex-direction: column;
+}
+.goods_detail .purchase_menu .cart {
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+}
+.goods_detail .purchase_menu .addCart {
+  width: 26%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 29rpx;
+  background-color: #ffa500;
+}
+.goods_detail .purchase_menu .purchasing {
+  width: 26%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 29rpx;
+  background-color: #eb4450;
+}

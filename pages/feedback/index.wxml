@@ -1,0 +1,44 @@
+<view class="feedback">
+    <!-- tab栏 -->
+    <view class="tab">
+        <view class="item {{currentIndex == 0 ? 'active' : ''}}" bindtap="handleIndex" data-index="0">体验问题</view>
+        <view class="item {{currentIndex == 1 ? 'active' : ''}}" bindtap="handleIndex" data-index="1">商品、商家投诉</view>
+    </view>
+    <!-- 表单 -->
+    <form wx:if="{{currentIndex == 0}}" action="">
+        <!-- 问题种类 -->
+        <view class="problems">
+            <!-- 标题 -->
+            <view class="title">问题的种类</view>
+            <!-- 问题 -->
+            <view class="little-problems">
+                <view class="problem">功能建议</view>
+                <view class="problem">购买的问题</view>
+                <view class="problem">性能问题</view>
+                <view class="problem">商品问题</view>
+                <view class="problem">其他</view>
+            </view>
+            <!-- 问题描述 -->
+            <view class="descriptions">
+                <textarea name="descriptions" id="descriptions" cols="30" rows="10" placeholder="请描述一下你的问题"></textarea>
+            </view>
+        </view>
+        <!-- 上传图片 -->
+        <view class="uploadImage">
+            <!-- 上传按钮 -->
+            <view class="btn" bindtap="uploadImage">+</view>
+            <!-- 图片 -->
+            <view class="images">
+                <image
+                wx:for="{{problem_images}}"
+                wx:key="index"
+                mode="scaleToFill"
+                src="{{item}}"
+                class="img" 
+                />
+            </view>
+        </view>
+        <!-- 提交 -->
+        <button id="submit" type="submit">提交</button>
+    </form>
+</view>

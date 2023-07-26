@@ -1,0 +1,52 @@
+<view class="collect">
+    <!-- tab栏 -->
+    <view class="tabs">
+        <view bindtap="changeIndex" data-index="0" class="tab {{currentIndex == 0 ? 'active' : ''}}">商品收藏</view>
+        <view bindtap="changeIndex" data-index="1" class="tab {{currentIndex == 1 ? 'active' : ''}}">品牌收藏</view>
+        <view bindtap="changeIndex" data-index="2" class="tab {{currentIndex == 2 ? 'active' : ''}}">店铺收藏</view>
+        <view bindtap="changeIndex" data-index="3" class="tab {{currentIndex == 3 ? 'active' : ''}}">浏览足迹</view>
+    </view>
+    <!-- 面包屑 -->
+    <view wx:if="{{currentIndex == 0}}" class="breadCrumbs">
+        <view bindtap="changeCrumbIndex" data-index="0" class="crumb {{currentIndex1 == 0 ? 'active1' : ''}}">全部</view>
+        <view bindtap="changeCrumbIndex" data-index="1" class="crumb {{currentIndex1 == 1 ? 'active1' : ''}}">正在热卖</view>
+        <view bindtap="changeCrumbIndex" data-index="2" class="crumb {{currentIndex1 == 2 ? 'active1' : ''}}">即将上线</view>
+    </view>
+    <!-- 商品收藏 -->
+    <view wx:if="{{currentIndex == 0}}" class="collect">
+        <!-- items -->
+        <view class="goodes">
+            <navigator 
+            wx:for="{{collected_goods}}"
+            wx:key="goods_id"
+            class="goods"
+            url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+            hover-class="noshadow"
+            >
+                <image mode="widthFix" src="{{item.goods_big_logo ? item.goods_big_logo :  'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fxsj%2F06%2Fzh%2Fpo.jpg%21%2Ffw%2F700%2Fwatermark%2Furl%2FL3hzai93YXRlcl9kZXRhaWwyLnBuZw%2Falign%2Fsoutheast&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669449504&t=43c5657fe67e1eb0559f6709e3cccea4'}}" class="img"/>
+                <view class="detail">
+                    <text class="words">{{item.goods_name}}</text>
+                    <text class="price">￥ {{item.goods_price}}</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <!-- 我的足迹 -->
+    <view wx:if="{{currentIndex == 3}}" class="history">
+        <!-- items -->
+        <view class="goodes">
+            <navigator 
+            wx:for="{{history}}"
+            wx:key="goods_id"
+            class="goods"
+            url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+            hover-class="noshadow"
+            >
+                <image mode="widthFix" src="{{item.goods_big_logo ? item.goods_big_logo :  'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fxsj%2F06%2Fzh%2Fpo.jpg%21%2Ffw%2F700%2Fwatermark%2Furl%2FL3hzai93YXRlcl9kZXRhaWwyLnBuZw%2Falign%2Fsoutheast&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669449504&t=43c5657fe67e1eb0559f6709e3cccea4'}}" class="img"/>
+                <view class="detail">
+                    <text class="words">{{item.goods_name}}</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

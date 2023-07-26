@@ -1,0 +1,10 @@
+<view class="container">
+  <!-- 搜索框 -->
+  <Search />
+  <!-- 轮播图 -->
+  <Swiper />
+  <!-- 分类菜单 -->
+  <Category />
+  <!-- 楼层 -->
+  <Floor />
+</view>

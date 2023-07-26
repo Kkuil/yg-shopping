@@ -1,0 +1,54 @@
+.goods_list .tabs {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #e7e7e7;
+}
+.goods_list .tabs .sub_tab {
+  width: 33.33%;
+  padding: 15rpx 0;
+  display: flex;
+  font-size: 35rpx;
+  justify-content: center;
+}
+.goods_list .tabs .active {
+  color: var(--themeColor);
+  border-bottom: 1px solid var(--themeColor);
+}
+.goods_list .goodes .goods {
+  width: 100vw;
+  height: 300rpx;
+  border-bottom: 2px solid #e7e7e7;
+  overflow: hidden;
+}
+.goods_list .goodes .goods .img {
+  width: 300rpx;
+  height: 100%;
+  padding: 20rpx;
+  float: left;
+}
+.goods_list .goodes .goods .detail {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+.goods_list .goodes .goods .detail .words {
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_list .goodes .goods .detail .price {
+  margin-top: 100rpx;
+  color: var(--themeColor);
+}
+.goods_list .reachBottom,
+.goods_list .loading,
+.goods_list .empty {
+  height: 80rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,10 @@
+<view class="cate">
+    <!-- 搜索框 -->
+    <Search />
+    <view class="container">
+        <!-- 菜单 -->
+        <Menu bindgetContents="getContents" bindgetScrollTop="getScrollTop"/>
+        <!-- 内容 -->
+        <Content Contents="{{Contents}}" scrollTop="{{scrollTop}}"/>
+    </view>
+</view>

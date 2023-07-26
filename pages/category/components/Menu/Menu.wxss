@@ -1,0 +1,17 @@
+.left_menu .scroll_menu {
+  width: 180rpx;
+  height: 100vh;
+}
+.left_menu .scroll_menu .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #292929;
+}
+.left_menu .scroll_menu .active {
+  color: var(--themeColor);
+  border-left: 3px solid var(--themeColor);
+}

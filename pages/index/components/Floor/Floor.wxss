@@ -1,0 +1,31 @@
+.floor {
+  padding: 10rpx 0px;
+}
+.floor .floor_title {
+  width: 100%;
+}
+.floor .floor_title .img {
+  width: 100%;
+}
+.floor .floor_list {
+  overflow: hidden;
+}
+.floor .floor_list .navigator {
+  float: left;
+  width: 33.33%;
+}
+.floor .floor_list .navigator:nth-last-child(-n+4) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 213rpx;
+  border-left: 10rpx solid #fff;
+}
+.floor .floor_list .navigator:nth-child(n+2) {
+  border-bottom: 10rpx solid #fff;
+}
+.floor .floor_list .navigator .img {
+  width: 100%;
+}

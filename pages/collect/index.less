@@ -1,0 +1,68 @@
+.collect {
+    .tabs {
+        display: flex;
+        justify-content: space-around;
+        font-size: 32rpx;
+        .tab {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80rpx;
+        }
+    }
+    .active {
+        color: var(--themeColor);
+        border-bottom: 1rpx solid var(--themeColor);
+    }
+    .breadCrumbs {
+        width: 100vw;
+        height: 100rpx;
+        background: #f3f4f6;
+        display: flex;
+        align-items: center;
+        padding-left: 20rpx;
+        .crumb {
+            padding: 10rpx;
+            font-size: 30rpx;
+            font-weight: bold;
+            border: 1rpx solid #ccc;
+            margin: 0 10rpx;
+        }
+        .active1 {
+            color: var(--themeColor);
+            border-color: var(--themeColor);
+        }
+    }
+    .goodes {
+        .goods {
+            width: 100vw;
+            height: 270rpx;
+            border-bottom: 2px solid #e7e7e7;
+            overflow: hidden;
+            .img {
+                width: 300rpx;
+                height: 100%;
+                padding: 20rpx;
+                float: left;
+            }
+            .detail {
+                display: flex;
+                flex-direction: column;
+                padding: 20rpx;
+                .words {
+                    font-size: 32rpx;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box; // 作为弹性伸缩盒子模型显示。
+                    -webkit-box-orient: vertical; // 设置伸缩盒子的子元素排列方式--从上到下垂直排列
+                    -webkit-line-clamp: 2; // 显示的行
+                }
+                .price {
+                    margin-top: 100rpx;
+                    color: var(--themeColor);
+                }
+            }
+        }
+    }
+}

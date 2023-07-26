@@ -1,0 +1,16 @@
+.order {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 35rpx;
+}
+.order .active {
+  border-bottom: 5rpx solid var(--themeColor);
+}
+.order .item {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

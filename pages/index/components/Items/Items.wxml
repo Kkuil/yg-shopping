@@ -1,0 +1,11 @@
+<ul class="category">
+    <li 
+        class="item"
+        wx:for="{{itemsList}}"
+        wx:key="name"
+    >
+        <navigator class="navigator" url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+            <image class="img" mode="widthFix" src="{{item.image_src}}"/>
+        </navigator>
+    </li>
+</ul>
